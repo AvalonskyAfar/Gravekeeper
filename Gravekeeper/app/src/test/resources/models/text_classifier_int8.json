@@ -1,0 +1,43 @@
+{
+  "format": "health_text_classifier_int8",
+  "version": 1,
+  "hash_algorithm": "sklearn_murmurhash3_32",
+  "analyzer": "char",
+  "ngram_min": 1,
+  "ngram_max": 4,
+  "n_features": 262144,
+  "alternate_sign": true,
+  "normalization": "l2",
+  "targets": [
+    {
+      "name": "sales",
+      "scale": 0.021345575963418316,
+      "intercept": -2.184889563568231,
+      "threshold": 0.49094101283587066,
+      "weight_count": 262144,
+      "max_quantization_error": 0.010672763921320438,
+      "mean_quantization_error": 0.0046353465877473354
+    },
+    {
+      "name": "health",
+      "scale": 0.022042375849926566,
+      "intercept": -1.265189840716062,
+      "threshold": 0.581647128343822,
+      "weight_count": 262144,
+      "max_quantization_error": 0.011021150276064873,
+      "mean_quantization_error": 0.004846362862735987
+    },
+    {
+      "name": "elderly",
+      "scale": 0.018680386655912623,
+      "intercept": -1.08206563109365,
+      "threshold": 0.5075349307738665,
+      "weight_count": 262144,
+      "max_quantization_error": 0.009340149350464344,
+      "mean_quantization_error": 0.004146805964410305
+    }
+  ],
+  "binary_size_bytes": 786510,
+  "binary_size_mb": 0.7500743865966797,
+  "lowercase": false
+}

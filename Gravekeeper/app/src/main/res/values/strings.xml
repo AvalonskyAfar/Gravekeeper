@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">守目人</string>
+    <string name="app_name_en">Gravekeeper</string>
+    <string name="app_name_full">守目人（Gravekeeper）</string>
+    <string name="notification_channel">守目人本地保护</string>
+    <string name="notification_title_active">守目人正在保护</string>
+    <string name="notification_title_attention">守目人需要处理</string>
+    <string name="status_overlay_title">守目人 · 测试状态页</string>
+    <string name="accessibility_description">仅在用户选择的短视频或直播 App 位于前台时，于本机分析当前画面，并按用户设置提醒或自动划走风险内容。屏幕内容不会上传。</string>
+</resources>

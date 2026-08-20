@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gravekeeper</string>
+    <string name="app_name_en">Gravekeeper</string>
+    <string name="app_name_full">Gravekeeper</string>
+    <string name="notification_channel">Gravekeeper local protection</string>
+    <string name="notification_title_active">Gravekeeper is protecting</string>
+    <string name="notification_title_attention">Gravekeeper needs attention</string>
+    <string name="status_overlay_title">Gravekeeper · Test status</string>
+    <string name="accessibility_description">Analyzes the current screen locally only while a user-selected short-video or live-streaming app is in the foreground, then warns or swipes past risky content according to the user’s settings. Screen content is never uploaded.</string>
+</resources>

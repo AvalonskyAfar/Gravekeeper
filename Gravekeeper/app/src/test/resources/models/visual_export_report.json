@@ -1,0 +1,125 @@
+{
+  "format": "gravekeeper_visual_litert_export",
+  "version": 1,
+  "status": "PASS",
+  "generated_at": "2026-08-07T06:51:10.571266+00:00",
+  "candidate_id": "day43-fusion-only-frozen-visual-v1",
+  "source": {
+    "checkpoint_sha256": "63780ae3f1716bc2f0d36995a3d780dd47a2a1f9ca98c7ec9be6c69c935afabd",
+    "model_source_sha256": "c73dcca06335df7c36e1c2e991a8e50f0af7666ae67d3062d424ab16d758c1e8",
+    "visual_backbone_fine_tuned_in_day43": false
+  },
+  "runtime_contract": {
+    "input_name": "inputs",
+    "input_shape": [
+      1,
+      3,
+      416,
+      192
+    ],
+    "input_dtype": "float32",
+    "input_range": [
+      0.0,
+      1.0
+    ],
+    "input_color": "RGB",
+    "input_resize": "aspect_preserving_letterbox_black",
+    "output_shape": [
+      1,
+      1
+    ],
+    "output_dtype": "float32",
+    "output": "visual_score",
+    "visual_score": "sum(softmax(marketing_logits)[1:]) * max(sigmoid(domain_logits))"
+  },
+  "toolchain": {
+    "python": "3.12.3",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "converter_module": "litert_torch",
+    "converter_version": "0.9.0"
+  },
+  "parity": {
+    "sample_count": 11,
+    "maximum_absolute_error": 6.020069122314453e-06,
+    "tolerance": 0.0001,
+    "status": "PASS",
+    "vectors": [
+      {
+        "name": "zeros",
+        "pytorch_score": 0.6319469213485718,
+        "litert_score": 0.6319469213485718,
+        "absolute_error": 0.0
+      },
+      {
+        "name": "ones",
+        "pytorch_score": 0.6234933137893677,
+        "litert_score": 0.62349933385849,
+        "absolute_error": 6.020069122314453e-06
+      },
+      {
+        "name": "vertical_gradient",
+        "pytorch_score": 0.6145010590553284,
+        "litert_score": 0.6144983768463135,
+        "absolute_error": 2.682209014892578e-06
+      },
+      {
+        "name": "seeded_uniform_0",
+        "pytorch_score": 0.8138675093650818,
+        "litert_score": 0.8138711452484131,
+        "absolute_error": 3.635883331298828e-06
+      },
+      {
+        "name": "seeded_uniform_1",
+        "pytorch_score": 0.758704662322998,
+        "litert_score": 0.7587085366249084,
+        "absolute_error": 3.874301910400391e-06
+      },
+      {
+        "name": "seeded_uniform_2",
+        "pytorch_score": 0.8068444132804871,
+        "litert_score": 0.8068473935127258,
+        "absolute_error": 2.9802322387695312e-06
+      },
+      {
+        "name": "seeded_uniform_3",
+        "pytorch_score": 0.7352936267852783,
+        "litert_score": 0.7352971434593201,
+        "absolute_error": 3.516674041748047e-06
+      },
+      {
+        "name": "seeded_uniform_4",
+        "pytorch_score": 0.7908861637115479,
+        "litert_score": 0.7908892035484314,
+        "absolute_error": 3.039836883544922e-06
+      },
+      {
+        "name": "seeded_uniform_5",
+        "pytorch_score": 0.8106934428215027,
+        "litert_score": 0.8106938600540161,
+        "absolute_error": 4.172325134277344e-07
+      },
+      {
+        "name": "seeded_uniform_6",
+        "pytorch_score": 0.7905951738357544,
+        "litert_score": 0.7905992865562439,
+        "absolute_error": 4.112720489501953e-06
+      },
+      {
+        "name": "seeded_uniform_7",
+        "pytorch_score": 0.7567204833030701,
+        "litert_score": 0.7567223906517029,
+        "absolute_error": 1.9073486328125e-06
+      }
+    ]
+  },
+  "artifact": {
+    "name": "gravekeeper_visual.tflite",
+    "bytes": 5032200,
+    "sha256": "6b4d7de8eb2f8d674c6a67f7d1252f1df8dd7c0144c6761442f66ee2e50b6f11"
+  },
+  "quantization": "none_fp32_reference",
+  "locked_test_read_or_used": false,
+  "quality_status": "QUALITY_GATE_FAILED_PENDING_FRESH_BLIND_ACCEPTANCE",
+  "day5_allowed": false
+}

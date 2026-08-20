@@ -1,0 +1,165 @@
+{
+  "format": "health_marketing_rule_test_vectors",
+  "version": 1,
+  "schema": "rule_schema.json",
+  "vectors": [
+    {
+      "name": "empty_text",
+      "input": {
+        "name": "empty_text",
+        "video_id": "test_empty",
+        "text": "",
+        "split": "validation"
+      },
+      "expected_features": {
+        "health_keyword_count": 0,
+        "sales_keyword_count": 0,
+        "elderly_keyword_count": 0,
+        "negative_context_count": 0,
+        "price_present": 0,
+        "shopping_cart_present": 0,
+        "order_prompt_present": 0,
+        "account_blacklist_hit": 0,
+        "account_whitelist_hit": 0,
+        "ocr_available": 0,
+        "collector_overlay": 0,
+        "black_occlusion": 0,
+        "loading_or_blank": 1,
+        "strong_positive_rule": 0
+      }
+    },
+    {
+      "name": "health_sale",
+      "input": {
+        "name": "health_sale",
+        "video_id": "test_health_sale",
+        "text": "中老年保健品限时优惠99元，立即下单",
+        "split": "validation"
+      },
+      "expected_features": {
+        "health_keyword_count": 1,
+        "sales_keyword_count": 3,
+        "elderly_keyword_count": 1,
+        "negative_context_count": 0,
+        "price_present": 0,
+        "shopping_cart_present": 0,
+        "order_prompt_present": 1,
+        "account_blacklist_hit": 0,
+        "account_whitelist_hit": 0,
+        "ocr_available": 1,
+        "collector_overlay": 0,
+        "black_occlusion": 0,
+        "loading_or_blank": 0,
+        "strong_positive_rule": 1
+      }
+    },
+    {
+      "name": "negative_context",
+      "input": {
+        "name": "negative_context",
+        "video_id": "test_negative_context",
+        "text": "科普曝光保健品骗局，不建议购买",
+        "split": "validation"
+      },
+      "expected_features": {
+        "health_keyword_count": 1,
+        "sales_keyword_count": 0,
+        "elderly_keyword_count": 0,
+        "negative_context_count": 4,
+        "price_present": 0,
+        "shopping_cart_present": 0,
+        "order_prompt_present": 0,
+        "account_blacklist_hit": 0,
+        "account_whitelist_hit": 0,
+        "ocr_available": 1,
+        "collector_overlay": 0,
+        "black_occlusion": 0,
+        "loading_or_blank": 0,
+        "strong_positive_rule": 0
+      }
+    },
+    {
+      "name": "collector_overlay",
+      "input": {
+        "name": "collector_overlay",
+        "video_id": "test_collector_overlay",
+        "text": "采集中 已确认新视频 保健品立即购买",
+        "split": "validation"
+      },
+      "expected_features": {
+        "health_keyword_count": 1,
+        "sales_keyword_count": 1,
+        "elderly_keyword_count": 0,
+        "negative_context_count": 0,
+        "price_present": 0,
+        "shopping_cart_present": 0,
+        "order_prompt_present": 1,
+        "account_blacklist_hit": 0,
+        "account_whitelist_hit": 0,
+        "ocr_available": 1,
+        "collector_overlay": 1,
+        "black_occlusion": 0,
+        "loading_or_blank": 0,
+        "strong_positive_rule": 0
+      }
+    },
+    {
+      "name": "blacklisted_account",
+      "input": {
+        "name": "blacklisted_account",
+        "video_id": "test_blacklist",
+        "text": "养生调理",
+        "split": "validation",
+        "account_id": "bad_account",
+        "account_blacklist": [
+          "bad_account"
+        ]
+      },
+      "expected_features": {
+        "health_keyword_count": 2,
+        "sales_keyword_count": 0,
+        "elderly_keyword_count": 0,
+        "negative_context_count": 0,
+        "price_present": 0,
+        "shopping_cart_present": 0,
+        "order_prompt_present": 0,
+        "account_blacklist_hit": 1,
+        "account_whitelist_hit": 0,
+        "ocr_available": 1,
+        "collector_overlay": 0,
+        "black_occlusion": 0,
+        "loading_or_blank": 0,
+        "strong_positive_rule": 1
+      }
+    },
+    {
+      "name": "whitelisted_account",
+      "input": {
+        "name": "whitelisted_account",
+        "video_id": "test_whitelist",
+        "text": "保健品立即下单",
+        "split": "validation",
+        "account_id": "trusted_account",
+        "account_whitelist": [
+          "trusted_account"
+        ]
+      },
+      "expected_features": {
+        "health_keyword_count": 1,
+        "sales_keyword_count": 2,
+        "elderly_keyword_count": 0,
+        "negative_context_count": 0,
+        "price_present": 0,
+        "shopping_cart_present": 0,
+        "order_prompt_present": 1,
+        "account_blacklist_hit": 0,
+        "account_whitelist_hit": 1,
+        "ocr_available": 1,
+        "collector_overlay": 0,
+        "black_occlusion": 0,
+        "loading_or_blank": 0,
+        "strong_positive_rule": 0
+      }
+    }
+  ]
+}

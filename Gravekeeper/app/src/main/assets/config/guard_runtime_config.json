@@ -1,0 +1,303 @@
+{
+  "format": "gravekeeper_runtime_config",
+  "version": 14,
+  "protection_enabled": false,
+  "active_performance_profile": "NORMAL",
+  "local_technical_status_enabled": true,
+  "status_notification_enabled": false,
+  "vendor_live_activity_enabled": false,
+  "notification_quick_stop": false,
+  "status_overlay": {
+    "enabled": false,
+    "show_outside_targets": false,
+    "opacity": 0.88
+  },
+  "content_identity": {
+    "enabled": true,
+    "visual_change_threshold": 0.24,
+    "candidate_similarity_threshold": 0.12,
+    "confirmation_frames": 2,
+    "minimum_reset_interval_ms": 1200
+  },
+  "content_change_events": {
+    "target_scroll": {
+      "enabled": true,
+      "requires_recent_touch": true,
+      "recent_touch_window_ms": 800,
+      "debounce_ms": 900,
+      "requires_main_page_evidence": true,
+      "allow_main_page_without_touch": true,
+      "minimum_source_width_ratio": 0.70,
+      "minimum_source_height_ratio": 0.80,
+      "maximum_horizontal_delta_ratio": 0.75,
+      "allow_unknown_direction": true,
+      "allow_missing_source_when_held": true,
+      "allow_missing_source_unknown_direction_when_held": true
+    }
+  },
+  "content_release_hold": {
+    "enabled": true,
+    "hold_after_whitelist": true,
+    "hold_after_disabled_media_policy": true,
+    "wake_on_target_scroll": true
+  },
+  "capture_interval_ms": 1500,
+  "ocr_interval_ms": 3000,
+  "ocr_timeout_ms": 1800,
+  "swipe_cooldown_ms": 1800,
+  "swipe_duration_ms": 350,
+  "swipe_gesture": {
+    "x_ratio": 0.50,
+    "start_y_ratio": 0.75,
+    "end_y_ratio": 0.25
+  },
+  "swipe_verification": {
+    "enabled": true,
+    "swipe_requires_known_media": true,
+    "timeout_ms": 4500,
+    "visual_change_threshold": 0.24,
+    "candidate_similarity_threshold": 0.12,
+    "confirmation_frames": 2,
+    "maximum_retries": 1,
+    "failure_circuit_breaker_ms": 30000,
+    "avoid_user_touch_ms": 900
+  },
+  "load_protection": {
+    "max_consecutive_errors": 3,
+    "error_pause_ms": 30000,
+    "pause_on_battery_low": true,
+    "minimum_battery_percent_while_not_charging": 10
+  },
+  "foreground_detection": {
+    "recent_target_evidence_ttl_ms": 43200000,
+    "usage_stats_fallback_enabled": true,
+    "usage_event_lookback_ms": 86400000,
+    "usage_event_max_age_ms": 15000,
+    "ignored_overlay_packages": ["android", "com.android.systemui"]
+  },
+  "multi_window": {
+    "fullscreen_enabled": true,
+    "split_screen_enabled": true,
+    "picture_in_picture_enabled": false,
+    "floating_window_enabled": false,
+    "unknown_mode_enabled": false,
+    "require_target_window_focused": true,
+    "minimum_fullscreen_width_ratio": 0.90,
+    "minimum_fullscreen_height_ratio": 0.82,
+    "minimum_split_span_ratio": 0.88,
+    "minimum_split_area_ratio": 0.25,
+    "maximum_split_area_ratio": 0.75,
+    "bounds_change_tolerance_ratio": 0.03,
+    "gesture_edge_padding_ratio": 0.04
+  },
+  "performance": {
+    "sample_count": 20,
+    "ocr_sample_count": 3,
+    "sustained_duration_ms": 6000,
+    "recommended_p95_ms": 900,
+    "degraded_p95_ms": 1400,
+    "recommended_ocr_p95_ms": 1800,
+    "degraded_ocr_p95_ms": 3200,
+    "recommended_peak_pss_mb": 650,
+    "degraded_peak_pss_mb": 900,
+    "severe_thermal_status": 4
+    ,"soc_reference": {
+      "source": "SOCPK PDF supplied by user, printed 2026-08-08",
+      "anchor": "Snapdragon 888 class",
+      "cpu_performance": 114.4,
+      "cpu_efficiency": 92.8,
+      "gpu_performance": 123.4,
+      "snapdragon_865_baseline": 100.0,
+      "multi_device_calibration_complete": false
+    },
+    "degraded_profile_advice": {
+      "capture_interval_multiplier": 1.5,
+      "ocr_interval_multiplier": 2.0,
+      "evidence_frames_delta": -1
+    }
+  },
+  "signals": {
+    "global_purchase_standalone_enabled": true,
+    "global_purchase_bias": 0.30,
+    "global_purchase_terms": ["全球购", "跨境购", "进口保税", "海外直邮", "保税仓"],
+    "negative_context_bias": -0.22,
+    "negative_context_terms": ["新闻", "曝光", "科普", "打假", "监管", "不要购买", "谨防", "辟谣", "骗局"],
+    "live_terms": ["直播中", "直播间", "主播", "人正在观看", "在线观众", "进入直播", "直播已结束"],
+    "short_video_terms": ["作品", "评论", "分享", "相关推荐", "关注", "点赞"],
+    "account_id_prefixes": ["抖音号", "快手号", "用户ID", "账号ID", "ID"],
+    "fusion_rule_features": {
+      "price_regex": "(?:¥|￥|\\b)\\s*\\d+(?:\\.\\d{1,2})?\\s*元?",
+      "health_terms": ["保健品", "养生", "调理", "降血压", "高血压", "降血糖", "血糖", "降血脂", "血脂", "护肝", "补肾", "排毒", "祛湿", "增强免疫", "提高免疫", "抗衰老", "延缓衰老", "黄精", "枸杞", "人参", "灵芝", "三七", "虫草", "益生菌", "膏方"],
+      "sales_terms": ["立即购买", "立即下单", "马上下单", "点击购买", "去抢购", "抢购", "限时优惠", "限时秒杀", "优惠券", "领券", "包邮", "厂家直销", "厂家源头", "库存有限", "最后几单", "拍下", "下单", "加购", "购物车", "商品链接"],
+      "elderly_terms": ["老人", "老年人", "中老年", "父母", "爸妈", "长辈", "爷爷", "奶奶", "叔叔阿姨", "退休", "养老"],
+      "negative_context_terms": ["新闻", "曝光", "骗局", "诈骗", "反诈", "辟谣", "测评", "科普", "警惕", "谨防", "打假", "虚假宣传", "不要购买", "不建议购买", "案例", "监管", "处罚"],
+      "shopping_cart_terms": ["购物车", "商品橱窗", "商品链接", "小黄车", "去抢购", "加购"],
+      "order_prompt_terms": ["立即购买", "立即下单", "马上下单", "点击购买", "去抢购", "拍下", "下单", "抢购", "扣1", "打在公屏"],
+      "collector_overlay_terms": ["采集器", "采集中", "已锁定", "已确认新视频", "继续采集"],
+      "black_occlusion_terms": ["黑屏", "遮挡", "画面全黑"],
+      "loading_or_blank_terms": ["加载中", "正在加载", "暂无内容", "网络异常", "空白页"]
+    },
+    "runtime_rules": [
+      {
+        "id": "global_purchase_health_combo",
+        "enabled": true,
+        "risk_bias": 0.18,
+        "required_term_groups": [
+          ["全球购", "跨境购", "进口保税", "海外直邮", "保税仓"],
+          ["治疗", "预防", "减肥", "壮阳", "降血糖", "降血压", "抗癌", "保健品", "药品"]
+        ]
+      },
+      {
+        "id": "transaction_pressure",
+        "enabled": true,
+        "risk_bias": 0.08,
+        "required_term_groups": [["购物车", "立即购买", "限时", "限量", "最后一单", "到手价", "拍下"]]
+      },
+      {
+        "id": "off_platform_purchase",
+        "enabled": true,
+        "risk_bias": 0.12,
+        "required_term_groups": [["私信", "加微信", "加V", "联系方式", "扫码购买", "站外购买"]]
+      },
+      {
+        "id": "elderly_health_anxiety",
+        "enabled": true,
+        "risk_bias": 0.10,
+        "required_term_groups": [
+          ["老人", "老年人", "爸妈", "父母", "中老年"],
+          ["不吃就", "错过", "晚了", "救命", "猝死", "瘫痪", "癌症", "血栓"]
+        ]
+      }
+    ]
+  },
+  "platforms": [
+    {
+      "id": "douyin",
+      "name": "抖音系列",
+      "enabled": true,
+      "packages": ["com.ss.android.ugc.aweme", "com.ss.android.ugc.aweme.lite", "com.ss.android.ugc.live"],
+      "risk_bias": 0.02,
+      "whitelist_ids": [],
+      "whitelist_match_mode": "PREFIX",
+      "account_detection": {
+        "enabled": true,
+        "explicit_prefix_anywhere": false,
+        "allow_at_handle": false,
+        "allow_follow_anchored_header": false,
+        "allow_short_video_header_name": false,
+        "allow_live_header_name": true,
+        "recover_configured_whitelist_from_anchored_line": true,
+        "whitelist_fuzzy_recovery_enabled": true,
+        "whitelist_maximum_edit_distance": 1,
+        "whitelist_minimum_coverage": 0.75,
+        "whitelist_fuzzy_minimum_length": 4,
+        "minimum_length": 2,
+        "maximum_length": 64,
+        "anchor_maximum_distance": 0.25,
+        "anchor_maximum_vertical_distance": 0.025,
+        "anchor_maximum_overlap": 0.03,
+        "id_allowed_regex": "(?i)[\\p{L}\\p{N}][\\p{L}\\p{N}._-]*",
+        "follow_anchor_terms": ["关注", "已关注", "粉丝", "店铺销量", "本场点赞"],
+        "candidate_exclusion_terms": ["人搜过", "粉丝", "点赞", "销量", "直播中", "运费险", "服务保障", "带货榜", "总榜"],
+        "short_video_regions": [
+          {"left": 0.00, "top": 0.58, "right": 0.82, "bottom": 0.92}
+        ],
+        "live_regions": [
+          {"left": 0.00, "top": 0.02, "right": 0.80, "bottom": 0.24}
+        ],
+        "unknown_regions": [
+          {"left": 0.00, "top": 0.02, "right": 0.82, "bottom": 0.24},
+          {"left": 0.00, "top": 0.58, "right": 0.82, "bottom": 0.92}
+        ]
+      },
+      "short_video": {
+        "enabled": true, "capture_interval_ms": 1700, "ocr_interval_ms": 3400,
+        "evidence_frames": 4, "evidence_reset_gap_ms": 8000, "evidence_aggregation": "MAX", "whitelist_enabled": true,
+        "risk_bias": -0.05,
+        "low": {"threshold": 0.45, "action": "NOTIFY"},
+        "medium": {"threshold": 0.58, "action": "SWIPE"},
+        "high": {"threshold": 0.75, "action": "SWIPE"}
+      },
+      "live": {
+        "enabled": true, "capture_interval_ms": 1300, "ocr_interval_ms": 2600,
+        "evidence_frames": 5, "evidence_reset_gap_ms": 9000, "evidence_aggregation": "MAX", "whitelist_enabled": true,
+        "risk_bias": 0.05,
+        "low": {"threshold": 0.38, "action": "NOTIFY"},
+        "medium": {"threshold": 0.50, "action": "SWIPE"},
+        "high": {"threshold": 0.70, "action": "SWIPE"}
+      },
+      "unknown": {
+        "enabled": true, "capture_interval_ms": 1800, "ocr_interval_ms": 2500,
+        "evidence_frames": 3, "evidence_reset_gap_ms": 7000, "evidence_aggregation": "MAX", "whitelist_enabled": true,
+        "risk_bias": 0.00,
+        "low": {"threshold": 0.44, "action": "NOTIFY"},
+        "medium": {"threshold": 0.58, "action": "NOTIFY"},
+        "high": {"threshold": 0.78, "action": "SWIPE"}
+      }
+    },
+    {
+      "id": "kuaishou",
+      "name": "快手系列",
+      "enabled": true,
+      "packages": ["com.smile.gifmaker", "com.kuaishou.nebula", "com.kwai.thanos"],
+      "risk_bias": 0.10,
+      "whitelist_ids": [],
+      "whitelist_match_mode": "PREFIX",
+      "account_detection": {
+        "enabled": true,
+        "explicit_prefix_anywhere": false,
+        "allow_at_handle": false,
+        "allow_follow_anchored_header": false,
+        "allow_short_video_header_name": false,
+        "allow_live_header_name": true,
+        "recover_configured_whitelist_from_anchored_line": true,
+        "whitelist_fuzzy_recovery_enabled": true,
+        "whitelist_maximum_edit_distance": 1,
+        "whitelist_minimum_coverage": 0.75,
+        "whitelist_fuzzy_minimum_length": 4,
+        "minimum_length": 2,
+        "maximum_length": 64,
+        "anchor_maximum_distance": 0.25,
+        "anchor_maximum_vertical_distance": 0.025,
+        "anchor_maximum_overlap": 0.03,
+        "id_allowed_regex": "(?i)[\\p{L}\\p{N}][\\p{L}\\p{N}._-]*",
+        "follow_anchor_terms": ["关注", "已关注", "粉丝", "店铺销量", "本场点赞"],
+        "candidate_exclusion_terms": ["人搜过", "粉丝", "点赞", "销量", "直播中", "运费险", "服务保障", "带货榜", "总榜"],
+        "short_video_regions": [
+          {"left": 0.00, "top": 0.55, "right": 0.84, "bottom": 0.94}
+        ],
+        "live_regions": [
+          {"left": 0.00, "top": 0.02, "right": 0.82, "bottom": 0.25}
+        ],
+        "unknown_regions": [
+          {"left": 0.00, "top": 0.02, "right": 0.84, "bottom": 0.25},
+          {"left": 0.00, "top": 0.55, "right": 0.84, "bottom": 0.94}
+        ]
+      },
+      "short_video": {
+        "enabled": true, "capture_interval_ms": 1400, "ocr_interval_ms": 2800,
+        "evidence_frames": 5, "evidence_reset_gap_ms": 8500, "evidence_aggregation": "MAX", "whitelist_enabled": true,
+        "risk_bias": -0.02,
+        "low": {"threshold": 0.40, "action": "NOTIFY"},
+        "medium": {"threshold": 0.54, "action": "SWIPE"},
+        "high": {"threshold": 0.72, "action": "SWIPE"}
+      },
+      "live": {
+        "enabled": true, "capture_interval_ms": 1100, "ocr_interval_ms": 2200,
+        "evidence_frames": 5, "evidence_reset_gap_ms": 9500, "evidence_aggregation": "MAX", "whitelist_enabled": true,
+        "risk_bias": 0.08,
+        "low": {"threshold": 0.34, "action": "NOTIFY"},
+        "medium": {"threshold": 0.46, "action": "SWIPE"},
+        "high": {"threshold": 0.66, "action": "SWIPE"}
+      },
+      "unknown": {
+        "enabled": true, "capture_interval_ms": 1600, "ocr_interval_ms": 2400,
+        "evidence_frames": 4, "evidence_reset_gap_ms": 7500, "evidence_aggregation": "MAX", "whitelist_enabled": true,
+        "risk_bias": 0.04,
+        "low": {"threshold": 0.38, "action": "NOTIFY"},
+        "medium": {"threshold": 0.49, "action": "NOTIFY"},
+        "high": {"threshold": 0.70, "action": "SWIPE"}
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Android/Gradle build artifacts
+**/.gradle/
+**/build/
+**/local.properties
+**/.android/

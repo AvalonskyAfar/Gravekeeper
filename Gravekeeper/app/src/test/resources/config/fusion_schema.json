@@ -1,0 +1,37 @@
+{
+  "format": "health_marketing_fusion",
+  "version": 1,
+  "model": "fusion_model.json",
+  "test_vectors": "fusion_test_vectors.json",
+  "feature_order": [
+    "visual_score",
+    "text_sales_score",
+    "text_health_score",
+    "text_elderly_score",
+    "health_keyword_count",
+    "sales_keyword_count",
+    "elderly_keyword_count",
+    "negative_context_count",
+    "price_present",
+    "shopping_cart_present",
+    "order_prompt_present",
+    "account_blacklist_hit",
+    "account_whitelist_hit",
+    "ocr_available",
+    "collector_overlay",
+    "black_occlusion",
+    "loading_or_blank",
+    "strong_positive_rule"
+  ],
+  "input_type": "float32",
+  "accumulator_type": "float32_or_float64",
+  "locked_test_policy": "forbidden during Day4",
+  "portable_model_parameters_present": true,
+  "parity": {
+    "raw_probability_max_abs_error": 2.220446049250313e-16,
+    "calibrated_probability_max_abs_error": 2.220446049250313e-16,
+    "threshold_decision_flips": 0,
+    "validation_rows_checked": 248,
+    "status": "PASS"
+  }
+}

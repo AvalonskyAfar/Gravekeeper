@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.gravekeeper'
+    compileSdk 36
+    buildToolsVersion '36.0.0'
+
+    defaultConfig {
+        applicationId 'com.gravekeeper'
+        minSdk 30
+        targetSdk 36
+        versionCode 23
+        versionName '2.1'
+
+        testInstrumentationRunner 'com.gravekeeper.RealScreenshotOcrRunner'
+
+        ndk {
+            if (project.hasProperty('realScreenshotTestAbi')) {
+                abiFilters 'x86_64'
+            } else {
+                abiFilters 'arm64-v8a'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // Keep all user-facing Chinese literals stable across Windows and CI
+    // builds. The source files are UTF-8 and must not depend on the host
+    // default charset (which previously produced mojibake on the emulator).
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+    }
+
+    androidResources {
+        noCompress 'tflite', 'bin'
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging false
+            // This release uses the CPU Interpreter API only. The separate
+            // OpenCL/OpenGL CompiledModel accelerator is not loaded.
+            excludes += ['**/libLiteRtClGlAccelerator.so']
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.ai.edge.litert:litert:2.1.4'
+    implementation 'com.google.mlkit:text-recognition-chinese:16.0.1'
+
+    testImplementation 'junit:junit:4.13.2'
+}

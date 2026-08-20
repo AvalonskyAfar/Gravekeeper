@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="guard_primary">#315A9B</color>
+    <color name="guard_background">#FFFFFF</color>
+    <color name="guard_text">#202124</color>
+    <color name="guard_background_native">#FFFFFF</color>
+    <color name="guard_background_dark">#181D24</color>
+    <color name="guard_text_dark">#EBEFF4</color>
+</resources>
