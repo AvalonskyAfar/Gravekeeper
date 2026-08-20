@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/AvalonskyAfar/Gravekeeper/releases"><img src="https://img.shields.io/github/v/release/AvalonskyAfar/Gravekeeper?label=最新版本&color=315A9B" alt="Release"></a>
-  <a href="Gravekeeper/LICENSE"><img src="https://img.shields.io/github/license/AvalonskyAfar/Gravekeeper?label=许可证&color=2E9168" alt="License"></a>
+  <a href="https://github.com/AvalonskyAfar/Gravekeeper/releases"><img src="https://img.shields.io/badge/版本-v2.1-blue" alt="Release"></a>
+  <a href="Gravekeeper/LICENSE"><img src="https://img.shields.io/badge/许可证-MIT-green" alt="License"></a>
   <img src="https://img.shields.io/badge/Android-11%2B-blue?logo=android" alt="Android 11+">
   <img src="https://img.shields.io/badge/架构-arm64--v8a-purple" alt="arm64-v8a">
   <img src="https://img.shields.io/badge/网络-无-red?logo=ema" alt="No Internet">
@@ -35,9 +35,9 @@
 > **🔒 所有分析均在设备本地完成。不联网、不上传、不存储屏幕数据。**
 
 <p align="center">
-  <img src="screenshots/screenshot_main.png" width="220" alt="保护总开关">
-  <img src="screenshots/screenshot_settings.png" width="220" alt="保护强度与策略">
-  <img src="screenshots/screenshot_more.png" width="220" alt="显示与交互设置">
+  <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_02_protection_strength.png" width="240" alt="多档保护强度">
+  <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_05_hidden_entry.png" width="240" alt="极简无痕隐形">
+  <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_07_local_offline.png" width="240" alt="零联网本地安全">
 </p>
 
 ---
