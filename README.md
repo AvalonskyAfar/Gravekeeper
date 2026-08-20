@@ -35,9 +35,9 @@
 > **🔒 所有分析均在设备本地完成。不联网、不上传、不存储屏幕数据。**
 
 <p align="center">
-  <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_02_protection_strength.png" width="240" alt="多档保护强度">
-  <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_05_hidden_entry.png" width="240" alt="极简无痕隐形">
-  <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_07_local_offline.png" width="240" alt="零联网本地安全">
+  <img src="screenshots/screenshot_main.png" width="220" alt="保护总开关">
+  <img src="screenshots/screenshot_settings.png" width="220" alt="保护强度与策略">
+  <img src="screenshots/screenshot_more.png" width="220" alt="显示与交互设置">
 </p>
 
 ---
@@ -110,9 +110,9 @@
 
 ## 📱 屏幕截图
 
-| 首次启动 | 主界面 | 设置页面 |
-|:---:|:---:|:---:|
-| <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_03_customization.png" width="200"> | <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_04_live_whitelist.png" width="200"> | <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_06_target_app_rest.png" width="200"> |
+| 主界面 | 设置 | 教程 | 更多 |
+|:---:|:---:|:---:|:---:|
+| <img src="screenshots/screenshot_main.png" width="180"> | <img src="screenshots/screenshot_settings.png" width="180"> | <img src="screenshots/screenshot_tutorial.png" width="180"> | <img src="screenshots/screenshot_more.png" width="180"> |
 
 ---
 
@@ -210,13 +210,15 @@ cd Gravekeeper
 ## 📂 项目结构
 
 ```
-Gravekeeper/                    Android 应用源码（Gradle 工程）
-├── app/src/main/java/          应用代码
-├── app/src/main/assets/        运行时模型与配置
-├── app/src/test/               单元测试
-└── app/src/main/res/           资源文件
-Gravekeeper-2.1-arm64.apk      签名正式版
-Gravekeeper-2.1-debug.apk      调试版
+software/                    本仓库根目录
+├── screenshots/              README 中使用的应用截图
+├── Gravekeeper/              Android 应用源码（Gradle 工程）
+│   ├── app/src/main/java/    应用代码
+│   ├── app/src/main/assets/  运行时模型与配置
+│   ├── app/src/test/         单元测试
+│   └── app/src/main/res/     资源文件
+├── Gravekeeper-2.1-arm64.apk   签名正式版
+└── Gravekeeper-2.1-debug.apk   调试版
 ```
 
 ---
