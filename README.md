@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../../ui/brand/gravekeeper-icon/gravekeeper-icon-master.png" width="120" alt="Gravekeeper Icon">
+  <img src="Gravekeeper/app/src/main/res/drawable-nodpi/ic_launcher_art.png" width="120" alt="Gravekeeper Icon">
 </p>
 
 <h1 align="center">守目人 Gravekeeper</h1>
@@ -26,9 +26,9 @@
 **所有分析均在设备本地完成。** 不联网、不上传、不存储屏幕数据。
 
 <p align="center">
-  <img src="app/src/main/res/drawable-nodpi/first_launch_page_02_protection_strength.png" width="240" alt="多档保护强度">
-  <img src="app/src/main/res/drawable-nodpi/first_launch_page_05_hidden_entry.png" width="240" alt="极简无痕隐形">
-  <img src="app/src/main/res/drawable-nodpi/first_launch_page_07_local_offline.png" width="240" alt="零联网本地安全">
+  <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_02_protection_strength.png" width="240" alt="多档保护强度">
+  <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_05_hidden_entry.png" width="240" alt="极简无痕隐形">
+  <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_07_local_offline.png" width="240" alt="零联网本地安全">
 </p>
 
 ---
@@ -93,7 +93,7 @@
 
 | 首次启动 | 主界面 | 设置页面 |
 |:---:|:---:|:---:|
-| <img src="app/src/main/res/drawable-nodpi/first_launch_page_03_customization.png" width="200"> | <img src="app/src/main/res/drawable-nodpi/first_launch_page_04_live_whitelist.png" width="200"> | <img src="app/src/main/res/drawable-nodpi/first_launch_page_06_target_app_rest.png" width="200"> |
+| <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_03_customization.png" width="200"> | <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_04_live_whitelist.png" width="200"> | <img src="Gravekeeper/app/src/main/res/drawable-nodpi/first_launch_page_06_target_app_rest.png" width="200"> |
 
 ---
 
@@ -101,7 +101,7 @@
 
 ### 下载安装
 
-1. 从 [Releases](../../releases) 下载最新 APK
+1. 从 [Releases](https://github.com/AvalonskyAfar/Gravekeeper/releases) 下载最新 APK
 2. 安装到 Android 11+（API 30）设备
 3. 首次打开，跟随教程授予无障碍权限
 4. 打开保护总开关，开始使用
@@ -128,8 +128,8 @@
 ### 编译
 
 ```bash
-# 进入软件目录
-cd software/Gravekeeper
+# 进入工程目录
+cd Gravekeeper
 
 # Debug 构建
 ./gradlew :app:assembleDebug
@@ -189,12 +189,13 @@ cd software/Gravekeeper
 ## 项目结构
 
 ```
-gravekeeper-open-source/
-├── software/Gravekeeper/    Android 应用源码（Gradle 工程）
-├── model/                   模型文件、训练工具、评估数据
-├── collector/               屏幕截图采集工具
-├── ui/                      设计资源、截图快照、品牌素材
-└── compliance/              合规与第三方检查清单
+Gravekeeper/                  Android 应用源码（Gradle 工程）
+├── app/src/main/java/        应用代码
+├── app/src/main/assets/      运行时模型与配置
+├── app/src/test/             单元测试
+└── app/src/main/res/         资源文件
+Gravekeeper-2.1-arm64.apk    签名正式版
+Gravekeeper-2.1-debug.apk    调试版
 ```
 
 ---
@@ -213,13 +214,13 @@ gravekeeper-open-source/
 
 ## 许可证
 
+本项目采用 [MIT 许可证](Gravekeeper/LICENSE)。你可以自由使用、修改和分发。
+
 | 内容 | 许可证 |
 |------|--------|
-| 应用代码 | 见仓库根目录许可证文件 |
+| 应用代码 | [MIT](Gravekeeper/LICENSE) |
 | 模型与训练产物 | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans) |
 | 第三方组件 | 各自遵守上游许可证 |
-
-使用本工程或发布衍生版本时，请分别确认应用代码、模型、第三方依赖和数据的许可证与再分发权利。
 
 ---
 
