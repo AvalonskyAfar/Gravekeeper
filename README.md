@@ -5,6 +5,10 @@
 <h1 align="center">🛡️ 守目人 Gravekeeper</h1>
 
 <p align="center">
+  <a href="README.md">简体中文</a> | <a href="README.en.md">English</a>
+</p>
+
+<p align="center">
   <strong>完全离线的短视频与直播健康营销防护工具</strong>
 </p>
 
